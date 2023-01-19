@@ -12,6 +12,9 @@ bodies:
 - BODY tool yaw link
 - BODY tool gripper1 link
 - BODY tool gripper2 link
+- BODY psm1_target_ik
+- BODY psm1_target_fk
+- BODY psm1_palm_joint_ik
 joints:
 - JOINT base link-yaw link
 - JOINT yaw link-pitch back link
@@ -914,3 +917,154 @@ JOINT tool yaw link-tool gripper2 link:
   max motor impulse: 50.0
   damping: 0.005
   offset: -3.12409
+BODY psm1_target_ik:
+  name: psm1_target_ik
+  mesh: psm1_target_ik.OBJ
+  mass: 0.0
+  collision margin: 0.001
+  scale: 1.0
+  location:
+    position:
+      x: 0.5
+      y: 0.5141
+      z: -0.8297
+    orientation:
+      r: -3.1416
+      p: -0.0
+      y: -1.5708
+  inertial offset:
+    position:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+    orientation:
+      r: 0
+      p: 0
+      y: 0
+  passive: false
+  publish children names: false
+  publish joint names: false
+  publish joint positions: false
+  friction:
+    rolling: 0.1
+    static: 0.5
+  restitution: 0.1
+  damping:
+    angular: 0.1
+    linear: 0.5
+  collision groups:
+  - 19
+  color components:
+    ambient:
+      level: 1.0
+    diffuse:
+      b: 1.0
+      g: 1.0
+      r: 1.0
+    specular:
+      b: 1.0
+      g: 1.0
+      r: 1.0
+    transparency: 1.0
+BODY psm1_target_fk:
+  name: psm1_target_fk
+  mesh: psm1_target_fk.STL
+  mass: 0.0
+  collision margin: 0.001
+  scale: 1.0
+  location:
+    position:
+      x: -0.15
+      y: 0.0
+      z: 11.1498
+    orientation:
+      r: 0.0
+      p: -0.0
+      y: 0.0
+  inertial offset:
+    position:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+    orientation:
+      r: 0
+      p: 0
+      y: 0
+  passive: false
+  publish children names: false
+  publish joint names: false
+  publish joint positions: false
+  friction:
+    rolling: 0.1
+    static: 0.5
+  restitution: 0.1
+  damping:
+    angular: 0.1
+    linear: 0.5
+  collision groups:
+  - 5
+  color components:
+    ambient:
+      level: 1.0
+    diffuse:
+      b: 0.015
+      g: 0.8
+      r: 0.3165
+    specular:
+      b: 1.0
+      g: 1.0
+      r: 1.0
+    transparency: 1.0
+BODY psm1_palm_joint_ik:
+  name: psm1_palm_joint_ik
+  mesh: psm1_palm_joint_ik.STL
+  mass: 0.0
+  inertia:
+    ix: 0.0
+    iy: 0.0
+    iz: 0.0
+  collision margin: 0.001
+  scale: 1.0
+  location:
+    position:
+      x: 0.0
+      y: 0.0
+      z: 10.0
+    orientation:
+      r: 0.0
+      p: -0.0
+      y: 0.0
+  inertial offset:
+    position:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+    orientation:
+      r: 0
+      p: 0
+      y: 0
+  passive: false
+  publish children names: false
+  publish joint names: false
+  publish joint positions: false
+  friction:
+    rolling: 0.1
+    static: 0.5
+  restitution: 0.1
+  damping:
+    angular: 0.1
+    linear: 0.5
+  collision groups:
+  - 14
+  color components:
+    ambient:
+      level: 1.0
+    diffuse:
+      b: 0.0078
+      g: 0.1653
+      r: 0.8
+    specular:
+      b: 0.0827
+      g: 0.0827
+      r: 0.4
+    transparency: 1.0
